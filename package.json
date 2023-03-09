@@ -1,0 +1,25 @@
+{
+  "name": "chrome-code-injector",
+  "author": "Arthur Sudbrack Ibarra",
+  "version": "0.1.0",
+  "dependencies": {
+    "@types/node": "16.18.3",
+    "typescript": "4.8.4"
+  },
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version"
+    ]
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.200"
+  }
+}
