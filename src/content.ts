@@ -20,10 +20,11 @@
 */
 window.addEventListener("keyup", (event) => {
   if (event.ctrlKey && event.key === "a") {
-    alert("You pressed the ctrl + a key combination!");
+    alert("You pressed the Ctrl + A key combination!");
   }
 });
 
 /*
-  Delete this file if you don't plan on using a content script.
+  Delete this file or add the annotation // @ignore at the 1st line
+  of this file if you don't plan on using a content script.
 */

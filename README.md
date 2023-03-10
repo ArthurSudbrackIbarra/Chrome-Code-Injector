@@ -15,10 +15,10 @@ Follow the steps below to build and test your extension:
 
 ### First Time Setup
 
-1. In the root directory, run `npm run build` to build your extension.
+1. In the root directory, run `npm run build` to build your extension. This will create a directory called `extension-unpacked` in the root of your project.
 2. In Chrome, go to `chrome://extensions`.
 3. Enable developer mode in the top right corner.
-4. Click "Load unpacked" in the top left corner and select the generated `build` directory in the root of your project.
+4. Click "Load unpacked" in the top left corner and select the generated `extension-unpacked` directory in the root of your project.
 
 ### Rebuilding and Reloading
 

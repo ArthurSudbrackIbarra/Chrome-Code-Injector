@@ -1,3 +1,5 @@
+// @ignore
+
 /*
   [Background Script]
 
@@ -15,5 +17,6 @@
 */
 
 /*
-  Delete this file if you don't plan on using a background script.
+  Delete this file or add the annotation // @ignore at the 1st line
+  of this file if you don't plan on using a background script.
 */
