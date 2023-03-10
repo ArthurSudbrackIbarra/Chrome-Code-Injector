@@ -1,6 +1,5 @@
 {
   "name": "chrome-code-injector",
-  "author": "Arthur Sudbrack Ibarra",
   "version": "0.1.0",
   "dependencies": {
     "@types/node": "16.18.3"
