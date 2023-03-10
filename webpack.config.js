@@ -57,11 +57,15 @@ if (entry.content) {
       js: [`${CONTENT_FILE_NAME}.js`],
     },
   ];
+} else {
+  delete manifest.content_scripts;
 }
 if (entry.background) {
   manifest.background = {
     service_worker: `${BACKGROUND_FILE_NAME}.js`,
   };
+} else {
+  delete manifest.background;
 }
 try {
   fs.writeFileSync(

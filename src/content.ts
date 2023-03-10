@@ -15,11 +15,11 @@
 */
 
 /*
-  Let's say you want to add a listener for when the user presses the "a" + "ctrl" key.
+  Let's say you want to add a listener for when the user presses the "A" + "Ctrl" key.
   You can do that like this:
 */
 window.addEventListener("keyup", (event) => {
-  if (event.ctrlKey && event.key === "a") {
+  if (event.ctrlKey && event.key?.toLowerCase() === "a") {
     alert("You pressed the Ctrl + A key combination!");
   }
 });
