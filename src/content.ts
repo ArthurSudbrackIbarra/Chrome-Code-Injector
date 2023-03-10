@@ -24,8 +24,6 @@ window.addEventListener("keyup", (event) => {
   }
 });
 
-export {};
-
 /*
   Delete this file if you don't plan on using a content script.
 */

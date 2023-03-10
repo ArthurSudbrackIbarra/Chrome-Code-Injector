@@ -14,8 +14,6 @@
   Link: https://stackoverflow.com/questions/12971869/background-scripts-vs-content-scripts-in-chrome-extensions
 */
 
-export {};
-
 /*
   Delete this file if you don't plan on using a background script.
 */
