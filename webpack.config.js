@@ -9,7 +9,9 @@ const CopyPlugin = require("copy-webpack-plugin");
   The files will be excluded if they contain the // @ignore annotation in the first line.
 */
 const entry = {};
-const files = ["background", "content"];
+const CONTENT_FILE_NAME = "content";
+const BACKGROUND_FILE_NAME = "background";
+const files = [CONTENT_FILE_NAME, BACKGROUND_FILE_NAME];
 files.forEach((file) => {
   const filePath = path.resolve(__dirname, "src", `${file}.ts`);
   try {
@@ -41,6 +43,35 @@ files.forEach((file) => {
     console.error(error);
   }
 });
+
+/*
+  Modify the extension's manifest JSON file.
+  This will add the 'content_scripts' key to the manifest file if the content.ts file exists and will be used.
+  This will also add the 'background' key to the manifest file if the background.ts file exists and will be used.
+*/
+const manifest = require("./public/manifest.json");
+if (entry.content) {
+  manifest.content_scripts = [
+    {
+      matches: ["<all_urls>"],
+      js: [`${CONTENT_FILE_NAME}.js`],
+    },
+  ];
+}
+if (entry.background) {
+  manifest.background = {
+    service_worker: `${BACKGROUND_FILE_NAME}.js`,
+  };
+}
+try {
+  fs.writeFileSync(
+    path.resolve(__dirname, "public", "manifest.json"),
+    JSON.stringify(manifest, null, 2)
+  );
+  console.log("[OK] Manifest file was modified.");
+} catch (error) {
+  console.error(error);
+}
 
 /*
   Exporting the webpack configuration.
