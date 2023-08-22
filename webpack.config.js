@@ -51,7 +51,7 @@ files.forEach((file) => {
     */
     if (file === CONTENT_FILE_NAME) {
       lines.forEach((line) => {
-        const matchUrl = line.trim().match(/\/\/ @match-url: (.*)/);
+        const matchUrl = line.trim().match(/\/\/ @match-url (.*)/);
         if (matchUrl) {
           CONTENT_FILE_MATCH_URLS.push(matchUrl[1]);
         }
@@ -137,7 +137,7 @@ if (WEB_ACCESSIBLE_RESOURCES.length > 0) {
   manifest.web_accessible_resources = {
     resources: WEB_ACCESSIBLE_RESOURCES,
     matches: ["<all_urls>"],
-  }
+  };
 } else {
   delete manifest.web_accessible_resources;
 }
@@ -179,7 +179,7 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: ".", to: ".", context: "public" },
+        { from: ".", to: ".", context: "public", filter: shouldCopyFile },
         {
           from: ".",
           to: ".",
